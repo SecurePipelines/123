@@ -1,3 +1,6 @@
+## Git Branching Strategy (Git Flow)
+
+```mermaid
 flowchart TD
     A([Start]) --> B[Clone Repo (main)]
     B --> C[Create Feature Branch: feature/<name>]
