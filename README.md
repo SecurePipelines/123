@@ -2,20 +2,20 @@
 
 ```mermaid
 flowchart TD
-    A([Start]) --> B[Clone Repo (main)]
-    B --> C[Create Feature Branch: feature/<name>]
+    A([Start]) --> B[Clone Repo - main]
+    B --> C[Create Feature Branch: feature/name]
     C --> D[Develop & Commit Code]
-    D --> E[Push Feature Branch to Remote]
-    E --> F[Create Pull Request → develop]
-    F --> G[Code Review & Testing]
+    D --> E[Push Feature Branch]
+    E --> F[Pull Request to develop]
+    F --> G{Code Review}
 
     G -->|Approved| H[Merge Feature → develop]
     G -->|Changes Requested| D
 
     H --> I[CI Build on develop]
     I --> J[Create Release Branch: release/x.y.z]
-    J --> K[Bug Fixes / Final Testing]
-    K --> L[Merge Release → main & Tag Version]
+    J --> K[Bug Fixes & Testing]
+    K --> L[Merge Release → main & Tag]
     L --> M[Merge Release → develop]
 
     M --> N{Hotfix Needed?}
@@ -23,6 +23,6 @@ flowchart TD
     O --> P[Apply Fix]
     P --> Q[Merge Hotfix → main & Tag]
     Q --> R[Merge Hotfix → develop]
-    R --> S([End])
+    R --> S[End]
 
     N -->|No| S
